@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(176, 105, 105);
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 300px;
+    width: 300px;
+    box-shadow: 3px 3px 10px black, -3px -3px 10px black;
+    background: url(./bulboff.gif),white;
+    background-repeat: no-repeat;
+    background-position: center;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+#on{
+    display: none;
+}
+#off{
+    background: rgb(176, 105, 105);
+    box-shadow: 1px 1px 5px grey, -1px -1px 5px grey;
+    padding: 5px 60px;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 1px 1px white, -1px -1px white;
+}
+#off::before{
+    content: 'ON';
+}
+#off:active{
+    padding: 4px 58px;
+}
+#check{
+    display: none;
+}
+#check:checked + .box{
+    background: url(./bulbon.gif),white;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#check:checked + .box #off::before{
+    content: 'OFF';
+}
